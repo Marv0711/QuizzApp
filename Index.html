@@ -1,17 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuizzApp</title>
-    <link rel="icon" href= "icon.png">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuizzApp</title>
+  <link rel="icon" href="icon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fonts.css">
+  <script src="script.js"></script>
+  <!--Bootstrap Files--->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
+
 <body>
-    
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">QuizzApp</span>
+    </div>
+  </nav>
+  <div class="progress">
+    <div class="progress-bar" id="progressBar" role="progressbar" style="width: 0%;" aria-valuenow="25"
+      aria-valuemin="0" aria-valuemax="100">25%</div>
+  </div>
+  <div id="mainContainer" class="container">
+    <div class="card quiz-card" style="width: 18rem;">
+      <div class="quiz-field">
+        <div class="quizChoiceArea" id="quizChoiceArea">
+          <img src="./img/logo.png" alt="">
+          <div onclick="createBorder('HTML')" class="border-with-choice">
+            <div id="HTMLChoice"></div><a id="HTMLColor" href="#/">HTML</a>
+          </div>
+          <div onclick="createBorder('CSS')" class="border-with-choice">
+            <div id="CSSChoice"></div><a id="CSSColor" href="#/">CSS</a>
+          </div>
+          <div onclick="createBorder('JS')" class="border-with-choice">
+            <div id="JSChoice"></div><a id="JSColor" href="#/">JS</a>
+          </div>
+          <div onclick="createBorder('Java')" class="border-with-choice">
+            <div id="JavaChoice"></div><a id="JavaColor" href="#/">Java</a>
+          </div>
+        </div>
+        <div id="quizArea" class="quiz-area quiz-start">
+          <div class="headline"><span class="big-text">Welcome to<br>Awesome HTML Quiz</span></div>
+          <span class="small-text">Ready for the Challange?</span>
+          <button onclick="ShowQuestion()" type="button" class="btn btn-warning">START NOW</button>
+        </div>
+      </div>
+    </div>
+    <div id="questionFooter" class="question-footer d-none m-4">
+      <button onclick="lastQuestion()" id="lastButton" class="button"><img src="./img/icons8-left-arrow-30.png"></button>
+      <span>Frage <b id="smallCounter">1</b> von <b id="bigCounter">5</b> </span>
+      <button onclick="nextQuestion()" id="nextButton" class="button" disabled><img
+          src="./img/icons8-right-arrow-30.png"></button>
+    </div>
+  </div>
 </body>
+
 </html>
